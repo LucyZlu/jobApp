@@ -1,10 +1,12 @@
 # 职位招聘APP
 ## 技术栈
+```
 React 
 Redux React状态管理
 Redux-Saga/Redux-thunk redux异步流处理
 Express node.js框架
 Redux-Form React表单处理
+```
 
 ## 命令
 
