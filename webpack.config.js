@@ -4,6 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const resolve = name => path.resolve(__dirname, name)
 const publicPath = '/'
 module.exports = {
+  mode: 'development',
   entry: './src/index.js',
   output: {
     path: resolve('build'), // 绝对路径
@@ -37,7 +38,11 @@ module.exports = {
   optimization: {
     minimizer: [
       new UglifyJsPlugin()
-    ]
+    ],
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all'
+    }
   },
   plugins: [
     new HtmlWebpackPlugin(
@@ -54,6 +59,7 @@ module.exports = {
     watchContentBase: true,
     hot: true,
     publicPath: publicPath,
+    host: '127.0.0.1',
     proxy: {
       '/user': {
         target: 'http://localhost:9093'

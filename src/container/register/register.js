@@ -66,10 +66,7 @@ class Register extends React.Component{
 					<WhiteSpace />
 					<Button type='primary' onClick={this.handleRegister}>注册 </Button>
 				</List>
-
-
 			</div>
-
 		)
 	}
 }
